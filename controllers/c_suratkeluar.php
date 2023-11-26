@@ -12,7 +12,7 @@ class c_suratkeluar
     public function read()
     {
         $conn = new c_koneksi();
-        // perintah mengambil semua data dari transaksi dan mengurutkan sesuai data terbaru diatas
+        // perintah mengambil semua data dari surat keluar dan mengurutkan sesuai data terbaru diatas
         $query = "SELECT * FROM suratkeluar ORDER BY id DESC";
         $data = mysqli_query($conn->conn(), $query);
 
@@ -33,7 +33,7 @@ class c_suratkeluar
     {
         $conn = new c_koneksi();
 
-        // perintah mengambil data dari barng berdasarkan id
+        // perintah mengambil data dari surat keluar berdasarkan id
         $query = "SELECT * FROM suratkeluar WHERE id = $id";
         $data = mysqli_query($conn->conn(), $query);
         while ($row = mysqli_fetch_object($data)) {
@@ -45,7 +45,7 @@ class c_suratkeluar
     public function update($id, $nomor, $tanggal, $perihal, $tujuan)
     {
         $conn = new c_koneksi();
-        // perintah untuk update data dari barang 
+        // perintah untuk update data dari surat keluar
         $query = "UPDATE suratkeluar SET nomor='$nomor', 
         tanggal='$tanggal', perihal='$perihal', tujuan='$tujuan' WHERE id = $id";
         $data = mysqli_query($conn->conn(), $query);
@@ -56,7 +56,7 @@ class c_suratkeluar
     {
         $conn = new c_koneksi();
 
-        // perintah untuk menghapus data dari barang berdasarkan id
+        // perintah untuk menghapus data dari surat keluar berdasarkan id
         $query = "DELETE FROM suratkeluar WHERE id = $id";
         $data = mysqli_query($conn->conn(), $query);
 
