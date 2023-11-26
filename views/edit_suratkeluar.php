@@ -2,7 +2,7 @@
 
 include "../controllers/c_login.php";
 include "../controllers/c_suratkeluar.php";
-$barang = new c_suratkeluar();
+$suratkeluar = new c_suratkeluar();
 
 $data = $_SESSION['data'];
 $nama = $_SESSION['username'] = $data['username'];
@@ -103,7 +103,7 @@ include_once "template/sidebar.php";
                         <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                     </div>
                 </li>
-
+                
                     <!-- Dropdown - Messages -->
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                         <h6 class="dropdown-header">
@@ -218,17 +218,17 @@ include_once "template/sidebar.php";
                     <form class="user" action="../routers/r_suratkeluar.php?aksi=edit" method="post" enctype="multipart/form-data">
                         <div class="col-sm-12 mb-3 mb-sm-0">
                             <input type="text" name="id" id="id" hidden value="<?= $edit->id ?>">
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="Nomor" name="nomor"  value="<?= $edit->nomor ?>">
-                            </div>
                             <div class="form-group ">
-                                <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Tanggal" name="tanggal" value="<?= $edit->tanggal ?>">
-                            </div> 
+                                <input type="date" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Tanggal Surat" name="tanggal" value="<?= $edit->tanggal ?>">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="Nomor Surat" name="nomor"  value="<?= $edit->nomor ?>">
+                            </div>
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="Perihal" name="perihal" value="<?= $edit->perihal ?>">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="Tujuan" name="tujuan" value="<?= $edit->tujuan ?>">
+                                <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="Ditunjukan" name="tujuan" value="<?= $edit->tujuan ?>">
                             </div>
                             <button type="submit" class="btn btn-primary btn-user btn-block">Edit Data</button>
                         </div>

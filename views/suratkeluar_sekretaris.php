@@ -224,7 +224,7 @@ $baru = new c_suratkeluar();
                                     <th>Nomor Surat</th>
                                     <th>Tanggal Surat</th>
                                     <th>Perihal</th>
-                                    <th>Tujuan</th>
+                                    <th>Ditunjukan</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -233,7 +233,7 @@ $baru = new c_suratkeluar();
                                     <th>Nomor Surat</th>
                                     <th>Tanggal Surat</th>
                                     <th>Perihal</th>
-                                    <th>Tujuan</th>
+                                    <th>Ditunjukan</th>
                                 </tr>
                             </tfoot>
                             <tbody>

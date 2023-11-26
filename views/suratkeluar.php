@@ -218,8 +218,8 @@ $baru = new c_suratkeluar();
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nomor Surat</th>
                                     <th>Tanggal Surat</th>
+                                    <th>Nomor Surat</th>
                                     <th>Perihal</th>
                                     <th>Ditunjukan</th>
                                     <th>Aksi</th>
@@ -228,8 +228,8 @@ $baru = new c_suratkeluar();
                             <tfoot>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nomor Surat</th>
                                     <th>Tanggal Surat</th>
+                                    <th>Nomor Surat</th>
                                     <th>Perihal</th>
                                     <th>Ditunjukan</th>
                                     <th>Aksi</th>
@@ -246,15 +246,15 @@ $baru = new c_suratkeluar();
     <td colspan = "6">
         <h4>Data Kosong</h4>
     </td>
-</tr>       
+</tr>    
                            <?php 
-                           }else {
+        }else {
                             $i = 1;
                       foreach ($baru->read() as $read) { ?>
                        <tr>
                                         <td><?= $i++; ?></td>
-                                        <td><?= $read->nomor ?></td>
                                         <td><?= $read->tanggal ?></td>
+                                        <td><?= $read->nomor ?></td>
                                         <td><?= $read->perihal ?></td>
                                         <td><?= $read->tujuan ?></td>
                                                                                 

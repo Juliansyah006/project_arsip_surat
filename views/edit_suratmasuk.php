@@ -103,10 +103,7 @@ include_once "template/sidebar.php";
                         <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                     </div>
                 </li>
-
-                        <!-- Counter - Messages -->
-                        <span class="badge badge-danger badge-counter">7</span>
-                    </a>
+                
                     <!-- Dropdown - Messages -->
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                         <h6 class="dropdown-header">
@@ -222,7 +219,7 @@ include_once "template/sidebar.php";
                         <div class="col-sm-12 mb-3 mb-sm-0">
                             <input type="text" name="id" id="id" hidden value="<?= $edit->id ?>">
                             <div class="form-group ">
-                                <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Tanggal" name="tanggal" value="<?= $edit->tanggal ?>">
+                                <input type="date" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Tanggal" name="tanggal" value="<?= $edit->tanggal ?>">
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="Nomor" name="nomor"  value="<?= $edit->nomor ?>">

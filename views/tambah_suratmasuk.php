@@ -59,9 +59,6 @@ include_once "template/sidebar.php"; ?>
                     </div>
                 </li>
 
-                        <!-- Counter - Alerts -->
-                        <span class="badge badge-danger badge-counter">3+</span>
-                    </a>
                     <!-- Dropdown - Alerts -->
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                         <h6 class="dropdown-header">
