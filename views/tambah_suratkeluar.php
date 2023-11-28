@@ -1,6 +1,6 @@
 <?php include "../controllers/c_login.php";
 
-$halaman = 'luarsek';
+$halaman = 'suratkeluar';
 
 $data = $_SESSION['data'];
 $nama = $_SESSION['username'] = $data['username'];
@@ -226,6 +226,9 @@ include_once "template/sidebar.php"; ?>
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="Ditunjukan" name="tujuan">
                             </div>
+                            <input type="file" name="dokumen" id="dokumen"  >
+                            <br>
+                            <br>
                             <button type="submit" class="btn btn-primary btn-user btn-block">Tambah Data</button>
                         </div>
                         <hr>

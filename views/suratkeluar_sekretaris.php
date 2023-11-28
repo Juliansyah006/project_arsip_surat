@@ -225,6 +225,7 @@ $baru = new c_suratkeluar();
                                     <th>Tanggal Surat</th>
                                     <th>Perihal</th>
                                     <th>Ditunjukan</th>
+                                    <th>Dokumen</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -234,6 +235,7 @@ $baru = new c_suratkeluar();
                                     <th>Tanggal Surat</th>
                                     <th>Perihal</th>
                                     <th>Ditunjukan</th>
+                                    <th>Dokumen</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -258,6 +260,7 @@ $baru = new c_suratkeluar();
                                         <td><?= $read->tanggal ?></td>
                                         <td><?= $read->perihal ?></td>
                                         <td><?= $read->tujuan ?></td>
+                                        <td><?= $read->dokumen ?></td>
                                     </tr>
                                     <?php }
                         } ?> 

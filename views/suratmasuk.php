@@ -223,6 +223,7 @@ $baru = new c_suratmasuk();
                                     <th>Asal Surat</th>
                                     <th>Perihal</th>
                                     <th>Keterangan</th>
+                                    <th>Dokumen</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -234,6 +235,7 @@ $baru = new c_suratmasuk();
                                     <th>Asal Surat</th>
                                     <th>Perihal</th>
                                     <th>Keterangan</th>
+                                    <th>Dokumen</th>
                                     <th>Aksi</th>
                                 </tr>
                             </tfoot>
@@ -260,6 +262,9 @@ $baru = new c_suratmasuk();
                                         <td><?= $read->asal ?></td>
                                         <td><?= $read->perihal ?></td>
                                         <td><?= $read->keterangan ?></td>
+                                        <td>
+                                            <img src="../assets/img/<?= $read->dokumen ?>" alt="<?= $read->tanggal ?>" width="50px" height="50px">
+                                        </td>
                                                                                 
                                             
                                         <td>

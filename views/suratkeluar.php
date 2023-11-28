@@ -222,6 +222,7 @@ $baru = new c_suratkeluar();
                                     <th>Nomor Surat</th>
                                     <th>Perihal</th>
                                     <th>Ditunjukan</th>
+                                    <th>Dokumen</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -232,6 +233,7 @@ $baru = new c_suratkeluar();
                                     <th>Nomor Surat</th>
                                     <th>Perihal</th>
                                     <th>Ditunjukan</th>
+                                    <th>Dokumen</th>
                                     <th>Aksi</th>
                                 </tr>
                             </tfoot>
@@ -257,7 +259,9 @@ $baru = new c_suratkeluar();
                                         <td><?= $read->nomor ?></td>
                                         <td><?= $read->perihal ?></td>
                                         <td><?= $read->tujuan ?></td>
-                                                                                
+                                        <td>
+                                            <img src="../assets/img/<?= $read->dokumen ?>" alt="<?= $read->tanggal ?>" width="50px" height="50px">
+                                        </td>                                        
                                             
                                         <td>
                                             <a href="edit_suratkeluar.php?id=<?= $read->id ?>" class="btn btn-info btn-circle btn-sm">

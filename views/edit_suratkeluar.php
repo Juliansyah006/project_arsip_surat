@@ -4,6 +4,8 @@ include "../controllers/c_login.php";
 include "../controllers/c_suratkeluar.php";
 $suratkeluar = new c_suratkeluar();
 
+$halaman = 'suratkeluar';
+
 $data = $_SESSION['data'];
 $nama = $_SESSION['username'] = $data['username'];
 $role = $_SESSION['role'] = $data['role'];
@@ -230,6 +232,9 @@ include_once "template/sidebar.php";
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="Ditunjukan" name="tujuan" value="<?= $edit->tujuan ?>">
                             </div>
+                            <input type="file" name="dokumen" id="dokumen" value="<?= $edit->dokumen ?>" >
+                            <br>
+                            <br>
                             <button type="submit" class="btn btn-primary btn-user btn-block">Edit Data</button>
                         </div>
                         <hr>

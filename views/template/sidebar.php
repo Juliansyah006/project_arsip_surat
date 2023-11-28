@@ -43,7 +43,7 @@
             
             <?php if($role == "sekretaris") : ?>
             <li class="nav-item <?= $halaman == 'masuksek' ? 'active' : ''; ?>">
-                <a class="nav-link" href="suratmasuk_sekretasis.php">
+                <a class="nav-link" href="suratmasuk_sekretaris.php">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Surat Masuk</span>
                 </a>

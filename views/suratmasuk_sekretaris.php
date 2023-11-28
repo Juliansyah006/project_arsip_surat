@@ -1,14 +1,14 @@
 <?php include "../controllers/c_login.php";
 
-$halaman = "tabel";
+$halaman = "masuksek";
 
 $data = $_SESSION['data'];
-$nama = $_SESSION['nama'] = $data['nama'];
+$nama = $_SESSION['username'] = $data['username'];
 $role = $_SESSION['role'] = $data['role'];
 include_once "template/header.php";
 include_once "template/sidebar.php";
-include_once "../controllers/c_barang.php";
-$baru = new c_barang();
+include_once "../controllers/c_suratmasuk.php";
+$baru = new c_suratmasuk();
 ?>
 
 <!-- Content Wrapper -->
@@ -42,6 +42,11 @@ $baru = new c_barang();
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
 
+                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                <li class="nav-item dropdown no-arrow d-sm-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
                     <!-- Dropdown - Messages -->
                     <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                         <form class="form-inline mr-auto w-100 navbar-search">
@@ -56,14 +61,6 @@ $baru = new c_barang();
                         </form>
                     </div>
                 </li>
-
-                <!-- Nav Item - Alerts -->
-                <li class="nav-item dropdown no-arrow mx-1">
-                    <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-bell fa-fw"></i>
-                        <!-- Counter - Alerts -->
-                        <span class="badge badge-danger badge-counter">3+</span>
-                    </a>
                     <!-- Dropdown - Alerts -->
 
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
@@ -183,7 +180,7 @@ $baru = new c_barang();
                             Activity Log
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../routers/r_login.php?aksi=logout" >
+                        <a class="dropdown-item" href="../routers/r_login.php?aksi=logout">
                             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                             Logout
                         </a>
@@ -201,17 +198,21 @@ $baru = new c_barang();
 
             <!-- Page Heading -->
             <!-- DataTales Example -->
+            <div style="text-align: right;">   
+            </div>
+            <div style="text-align: left;">
+                <div class="my-2"></div>
+                <a href="laporan_SM.php" target="_blank" class="btn btn-success btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-download"></i>
+                    </span>
+                    <span class="text">Cetak</span>
+                </a>
+            </div>
+            <br>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h4 class="m-0 font-weight-bold text-primary">Tabel Data</h4>
-                    <div style="text-align: right;"  >
-                        <a href="tambah_barang.php" class="btn btn-primary btn-icon-split">
-                            <span class="icon text-white-50">
-                                <i class="fas fa-plus"></i>
-                            </span>
-                            <span class="text">Tambah data</span>
-                        </a>
-                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -219,36 +220,54 @@ $baru = new c_barang();
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Qty</th>
-                                    <th>Harga</th>
-                                    <th>Gambar</th>
+                                    <th>Tanggal Surat</th>
+                                    <th>Nomor Surat</th>
+                                    <th>Asal Surat</th>
+                                    <th>Perihal</th>
+                                    <th>Keterangan</th>
+                                    <th>Dokumen</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Qty</th>
-                                    <th>Harga</th>
-                                    <th>Gambar</th>
+                                    <th>Tanggal Surat</th>
+                                    <th>Nomor Surat</th>
+                                    <th>Asal Surat</th>
+                                    <th>Perihal</th>
+                                    <th>Keterangan</th>
+                                    <th>Dokumen</th>
                                 </tr>
                             </tfoot>
-                            <?php $i = 1; ?>
-                            <?php foreach ($baru->read() as $read) : ?>
-                                <tbody>
-                                    <tr>
-                                        <td><?= $i; ?></td>
-                                        <td><?= $read->nama_barang ?></td>
-                                        <td><?= $read->qty ?></td>
-                                        <td><?= 'Rp. ' . number_format($read->harga, 0, '', '.'); ?></td>
-                                        <td>
-                                            <img src="../assets/img/<?= $read->photo ?>" alt="" width="50px" height="50px">
-                                        </td>
+                            <tbody>
+
+                            <?php 
+        if (empty($baru->read())) {
+        
+        
+                            ?>
+<tr> 
+    <td colspan = "6">
+        <h4>Data Kosong</h4>
+    </td>
+</tr>    
+                           <?php 
+        }else {
+                            $i = 1;
+                      foreach ($baru->read() as $read) { ?>
+                       <tr>
+                                        <td><?= $i++; ?></td>
+                                        <td><?= $read->tanggal ?></td>
+                                        <td><?= $read->nomor ?></td>
+                                        <td><?= $read->asal ?></td>
+                                        <td><?= $read->perihal ?></td>
+                                        <td><?= $read->keterangan ?></td> 
+                                        <td><?= $read->dokumen ?></td>                             
                                     </tr>
-                                    <?php $i++; ?>
-                                </tbody>
-                            <?php endforeach; ?>
+                                    <?php }
+                        } ?> 
+                                </tbody> 
+                            
                         </table>
                     </div>
                 </div>
@@ -282,6 +301,5 @@ $baru = new c_barang();
 </a>
 
 <!-- Logout Modal-->
-
 
 <?php include_once "template/footer.php" ?>
