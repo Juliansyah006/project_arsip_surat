@@ -6,7 +6,7 @@ class c_suratmasuk
     public function insert($id, $tanggal, $nomor, $asal, $perihal, $keterangan, $dokumen)
     {
         $conn = new c_koneksi();
-        $query = "INSERT INTO suratmasuk VALUES ($id, '$tanggal', '$nomor', '$asal', '$perihal', '$keterangan' , '$dokumen')";
+        $query = "INSERT INTO suratmasuk VALUES ('$id', '$tanggal', '$nomor', '$asal', '$perihal', '$keterangan' , '$dokumen')";
         $data = mysqli_query($conn->conn(), $query);
     }
 
