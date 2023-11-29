@@ -260,7 +260,9 @@ $baru = new c_suratkeluar();
                                         <td><?= $read->tanggal ?></td>
                                         <td><?= $read->perihal ?></td>
                                         <td><?= $read->tujuan ?></td>
-                                        <td><?= $read->dokumen ?></td>
+                                        <td>
+                                            <img src="../assets/img/<?= $read->dokumen ?>" alt="<?= $read->tanggal ?>" width="50px" height="50px">
+                                        </td>
                                     </tr>
                                     <?php }
                         } ?> 

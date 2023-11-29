@@ -262,7 +262,9 @@ $baru = new c_suratmasuk();
                                         <td><?= $read->asal ?></td>
                                         <td><?= $read->perihal ?></td>
                                         <td><?= $read->keterangan ?></td> 
-                                        <td><?= $read->dokumen ?></td>                             
+                                        <td>
+                                            <img src="../assets/img/<?= $read->dokumen ?>" alt="<?= $read->tanggal ?>" width="50px" height="50px">
+                                        </td>                             
                                     </tr>
                                     <?php }
                         } ?> 
