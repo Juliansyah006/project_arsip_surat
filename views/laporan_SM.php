@@ -202,7 +202,6 @@ $baru = new c_suratmasuk();
             <br>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h4 class="m-0 font-weight-bold text-primary">Tabel Data</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -215,6 +214,7 @@ $baru = new c_suratmasuk();
                                     <th>Asal Surat</th>
                                     <th>Perihal</th>
                                     <th>Keterangan</th>
+                                    <th>Dokumen</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -225,6 +225,7 @@ $baru = new c_suratmasuk();
                                     <th>Asal Surat</th>
                                     <th>Perihal</th>
                                     <th>Keterangan</th>
+                                    <th>Dokumen</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -250,8 +251,9 @@ $baru = new c_suratmasuk();
                                         <td><?= $read->asal ?></td>
                                         <td><?= $read->perihal ?></td>
                                         <td><?= $read->keterangan ?></td>
-                                                                                        
-                        
+                                        <td>
+                                            <img src="../assets/img/<?= $read->dokumen ?>" alt="<?= $read->tanggal ?>" width="50px" height="50px">
+                                        </td>                                                                  
                                     </tr>
                                     <?php }
                         } ?> 
@@ -269,13 +271,7 @@ $baru = new c_suratmasuk();
     <!-- End of Main Content -->
 
     <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2020</span>
-            </div>
-        </div>
-    </footer>
+
     <!-- End of Footer -->
 
 </div>

@@ -52,7 +52,7 @@ if ($_GET["aksi"] == "tambah") {
     if (in_array($ekstensi, $tipe) == true) {
         if ($ukuran <= 1044070) {
             move_uploaded_file($tmp, '../assets/img/' . $dokumen);
-            $suratkeluar->insert($id, $nomor, $tanggal, $perihal, $tujuan, $dokumen);
+            $suratkeluar->update($id, $nomor, $tanggal, $perihal, $tujuan, $dokumen);
             if ($suratkeluar) {
                 echo "<script> alert('Data berhasil di tambahkan!');
                 document.location.href = '../views/suratkeluar.php';

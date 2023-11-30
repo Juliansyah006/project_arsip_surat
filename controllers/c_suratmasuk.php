@@ -33,7 +33,7 @@ class c_suratmasuk
     {
         $conn = new c_koneksi();
 
-        // perintah mengambil data dari barng berdasarkan id
+        // perintah mengambil data dari suratmasuk berdasarkan id
         $query = "SELECT * FROM suratmasuk WHERE id = $id";
         $data = mysqli_query($conn->conn(), $query);
         while ($row = mysqli_fetch_object($data)) {

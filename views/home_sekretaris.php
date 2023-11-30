@@ -208,8 +208,8 @@ include_once "template/sidebar.php"; ?>
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Selamat datang <?= $nama; ?></h1>
-                    
+                    <h1 class="h3 mb-2 text-gray-800">Selamat Datang <?= $nama; ?></h1>
+                    <h3>Role Anda Sebagai <?= $role; ?></h3>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -217,13 +217,7 @@ include_once "template/sidebar.php"; ?>
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
+
             <!-- End of Footer -->
 
         </div>

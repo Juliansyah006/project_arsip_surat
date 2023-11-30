@@ -210,7 +210,8 @@ include_once "template/sidebar.php"; ?>
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                <h1>Ini halaman admin <?= $nama; ?></h1>
+                <h1>Selamat Datang <?= $nama; ?></h1>
+                <h3>Role Anda Sebagai <?= $role; ?></h3>
                     <!-- DataTales Example
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -261,13 +262,7 @@ include_once "template/sidebar.php"; ?>
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
+
             <!-- End of Footer -->
 
         </div>
